@@ -1,0 +1,3 @@
+/home/mario/OneDrive/code/C/Tecniche programmazione/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mario/OneDrive/code/C/Tecniche programmazione/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mario/OneDrive/code/C/Tecniche programmazione/cmake-build-debug/CMakeFiles/Tecniche_programmazione.dir
