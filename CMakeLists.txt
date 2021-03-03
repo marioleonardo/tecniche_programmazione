@@ -3,4 +3,4 @@ project(Tecniche_programmazione C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Tecniche_programmazione lab1/main.c)
+add_executable(Tecniche_programmazione lab0/main.c)
