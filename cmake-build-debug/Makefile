@@ -143,32 +143,32 @@ Tecniche_programmazione/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tecniche_programmazione.dir/build.make CMakeFiles/Tecniche_programmazione.dir/build
 .PHONY : Tecniche_programmazione/fast
 
-lab1/main.o: lab1/main.c.o
+lab0/es2.o: lab0/es2.c.o
 
-.PHONY : lab1/main.o
+.PHONY : lab0/es2.o
 
 # target to build an object file
-lab1/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tecniche_programmazione.dir/build.make CMakeFiles/Tecniche_programmazione.dir/lab1/main.c.o
-.PHONY : lab1/main.c.o
+lab0/es2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tecniche_programmazione.dir/build.make CMakeFiles/Tecniche_programmazione.dir/lab0/es2.c.o
+.PHONY : lab0/es2.c.o
 
-lab1/main.i: lab1/main.c.i
+lab0/es2.i: lab0/es2.c.i
 
-.PHONY : lab1/main.i
+.PHONY : lab0/es2.i
 
 # target to preprocess a source file
-lab1/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tecniche_programmazione.dir/build.make CMakeFiles/Tecniche_programmazione.dir/lab1/main.c.i
-.PHONY : lab1/main.c.i
+lab0/es2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tecniche_programmazione.dir/build.make CMakeFiles/Tecniche_programmazione.dir/lab0/es2.c.i
+.PHONY : lab0/es2.c.i
 
-lab1/main.s: lab1/main.c.s
+lab0/es2.s: lab0/es2.c.s
 
-.PHONY : lab1/main.s
+.PHONY : lab0/es2.s
 
 # target to generate assembly for a file
-lab1/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tecniche_programmazione.dir/build.make CMakeFiles/Tecniche_programmazione.dir/lab1/main.c.s
-.PHONY : lab1/main.c.s
+lab0/es2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tecniche_programmazione.dir/build.make CMakeFiles/Tecniche_programmazione.dir/lab0/es2.c.s
+.PHONY : lab0/es2.c.s
 
 # Help Target
 help:
@@ -179,9 +179,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Tecniche_programmazione"
-	@echo "... lab1/main.o"
-	@echo "... lab1/main.i"
-	@echo "... lab1/main.s"
+	@echo "... lab0/es2.o"
+	@echo "... lab0/es2.i"
+	@echo "... lab0/es2.s"
 .PHONY : help
 
 

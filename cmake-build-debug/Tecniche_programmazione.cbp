@@ -44,9 +44,6 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10"/>
-					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux"/>
-					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/10/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include"/>
@@ -65,9 +62,6 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10"/>
-					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/x86_64-redhat-linux"/>
-					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/10/../../../../include/c++/10/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/10/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include"/>
@@ -80,7 +74,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mario/OneDrive/code/C/Tecniche programmazione/lab1/main.c">
+		<Unit filename="/home/mario/OneDrive/code/C/Tecniche programmazione/lab0/es2.c">
 			<Option target="Tecniche_programmazione"/>
 		</Unit>
 		<Unit filename="/home/mario/OneDrive/code/C/Tecniche programmazione/CMakeLists.txt">

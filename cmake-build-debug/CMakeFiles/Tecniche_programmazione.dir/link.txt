@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/Tecniche_programmazione.dir/lab1/main.c.o  -o Tecniche_programmazione 
+/usr/bin/gcc -g   CMakeFiles/Tecniche_programmazione.dir/lab0/es2.c.o  -o Tecniche_programmazione 
