@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/*.compiled": true,
+        "**/*.o": true
+    }
+}
