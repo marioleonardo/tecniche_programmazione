@@ -29,6 +29,8 @@ int main(){
             fprintf(output, "%c %.2f\n", operation, result);
         }
     }
+    fclose(input);
+    fclose(output);
     return 0;
 }
 

@@ -26,6 +26,8 @@ int main(){
         fprintf(output, "%c %.2f\n", operation, result);
         fscanf(input, "%c%f%f", &operation, &op1, &op2);
     }
+    fclose(input);
+    fclose(output);
     return 0;
 }
 

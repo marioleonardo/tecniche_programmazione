@@ -1,0 +1,4 @@
+Partenza $5Destinazione $3CostoParigi $2
+New York $410$2 $9 $9 
+Roma $9  Londra $5700
+Sidney $6Los Angeles $42$3
