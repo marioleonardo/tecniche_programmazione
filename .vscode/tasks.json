@@ -5,9 +5,6 @@
             "label": "C/C++: clang build active file",
             "command": "/usr/bin/clang",
             "args": [
-                "-L",
-                "/mario/libraries_c",
-                "-lglut -lGLU",
                 "-g",
                 "${file}",
                 "-o",

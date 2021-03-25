@@ -3,17 +3,31 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-
+#include <math.h>
+/*  #include <libpng16/png.h> */
 
 #define NUM_PTS 6
+#define len(array) sizeof( array )/sizeof(array[0])
 
+double * coeffMultiply(double a[], double b[], int lengthA, int lengthB);
 
 double ptsList[NUM_PTS][2];
+
+double pnx[NUM_PTS+1];
 
 double functionMath(double x){
 	double y;
 	y=x*x*x *0.4;
 	return y;
+}
+
+void interpolate(double ptsList[][2]){
+	float result;
+	float polinomio[NUM_PTS];
+	for(int i=0; i<NUM_PTS; i++){
+		
+	};
+	
 }
 
 void display(void)
@@ -59,7 +73,7 @@ void display(void)
 		double pointsFunction[100][2];
 		for(int i=0; i<100; i++){
 			pointsFunction[i][0]= -5.0 + 0.1*i ;
-			
+			interpolate(ptsList);
 			pointsFunction[i][1] = functionMath(pointsFunction[i][0]);
 			glVertex2f(pointsFunction[i][0], pointsFunction[i][1]);
 		}
@@ -90,3 +104,30 @@ int main(int argc, char** argv)
 /* gcc -lGL opengl.c -o cube -lglut -lGLU
 ./cube 
 */
+
+double * coeffMultiply(double a[], double b[], int lengthA, int lengthB){
+    int index=0;
+    int nonZeroLast=0;
+    while(index < lengthA ){
+        if(a[index] != 0)
+            nonZeroLast=index;
+        index++;
+    }
+    lengthA=nonZeroLast;
+    index=0;
+    nonZeroLast=0;
+    while(index < lengthB ){
+        if(b[index] != 0)
+            nonZeroLast=index;
+        index++;
+    }
+    lengthB=nonZeroLast;
+    double result[1 + lengthA + lengthB];
+    
+    for(int first=0; first<lengthA+1; first++){
+        for(int second=0; second<lengthB+1; second++){
+            result[first+second]+=a[first]*b[second];
+        }
+    }
+    return result;
+}

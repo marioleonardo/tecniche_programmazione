@@ -1,13 +1,5 @@
-Il numero 248 èpar
-Il numero 248 èpar
-Il numero 248 èpar
-Il numero 248 èpar
-Il numero 248 èpar
-Il numero 248 èpar
-
-Apelle figlio di Apollo
-fece una palla di pelle di pollo
-tutti i pesci vennero a galla
-per vedere la palla di pelle di pollo
-fatta da Apelle figlio di Apollo.
-
+(3 + 2) / 7
+((3 -7) 4)
+(3 -2) + 
+(8 * 9 1) * 4
+((4*(2+23)) / (7-3))
