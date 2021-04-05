@@ -3,18 +3,16 @@ int main() {
     FILE *fp_read, *fp_write_odd, *fp_write_even;
     char file_string[100], name[20];
     int counter = 0;
-    if ((fp_read = fopen("./Bronte.txt", "r")) == NULL) {
+
+    fp_read = fopen("./Bronte.txt", "r");
+    fp_write_odd = fopen("./Output_odd.txt", "w");
+    fp_write_even = fopen("./Output_even.txt", "w");
+    
+    if (fp_write_odd == NULL || fp_write_even == NULL || fp_read ==NULL) {
         printf("Error opening file\n");
         return 1;
     }
-    if ((fp_write_odd = fopen("./Output_odd.txt", "w")) == NULL) {
-        printf("Error opening file\n");
-        return 2;
-    }
-    if ((fp_write_even = fopen("./Output_even.txt", "w")) == NULL) {
-        printf("Error opening file\n");
-        return 3;
-    }
+
     printf("What's your name?");
     gets(name);
     while (!feof(fp_read)) {
