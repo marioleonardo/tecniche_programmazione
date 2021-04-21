@@ -1,6 +1,9 @@
 {
     "files.exclude": {
         "**/*.compiled": true,
-        "**/*.o": true
+        "**/*.exe": true
+    },
+    "files.associations": {
+        "random": "c"
     }
 }

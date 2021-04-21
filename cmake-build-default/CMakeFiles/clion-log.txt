@@ -1,4 +1,0 @@
-/snap/clion/139/bin/cmake/linux/bin/cmake -DCMAKE_C_COMPILER=/usr/bin/clang -D CMAKE_C_COMPILER=/usr/bin/clang -G "CodeBlocks - Unix Makefiles" "/home/mario/OneDrive/code/C/Tecniche programmazione"
--- Configuring done
--- Generating done
--- Build files have been written to: /home/mario/OneDrive/code/C/Tecniche programmazione/cmake-build-default

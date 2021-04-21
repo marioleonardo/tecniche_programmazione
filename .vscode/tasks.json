@@ -2,13 +2,13 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "C/C++: clang build active file",
-            "command": "/usr/bin/clang",
+            "label": "mario",
+            "command": "gcc",
             "args": [
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.compiled"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
