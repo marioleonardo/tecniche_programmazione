@@ -4,6 +4,10 @@
         "**/*.exe": true
     },
     "files.associations": {
-        "random": "c"
+        "random": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "ranges": "c"
     }
 }
