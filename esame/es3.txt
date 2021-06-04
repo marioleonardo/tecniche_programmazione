@@ -1,0 +1,13 @@
+void prodCartFilt(int *v1, int d1, int *v2, int d2){
+    int i, j;
+
+
+    printf("prodotto cartesiano filtrato: ");
+    for (i=0;i<d1;i++){
+        for(j=0;j<d2;j++){
+            if(v1[i]-v2[j]>1 || v1[i]-v2[j]<-1){
+                printf("(%d,%d) ", v1[i], v2[j]);
+            }
+        }
+    }
+}

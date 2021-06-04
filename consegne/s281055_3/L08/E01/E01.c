@@ -10,64 +10,70 @@ struct rect{
     int area;
 };
 
-struct rect calculateNewRect(int mat[MAX_MAT][MAX_MAT], int dim[2], int startr, int startc);
-void handleFileInput(FILE *fp, int mat[MAX_MAT][MAX_MAT], int dim[2]);
+int riconosciRegione(int M[MAX_MAT][MAX_MAT] , int  nr, int nc, int startr, int startc, int *b, int *h);
+void leggiMatrice(int M[MAX_MAT][MAX_MAT], int maxr , int *nr, int *nc);
 void compareMax(struct rect *rectTemp, struct rect *maxA, struct rect *maxB, struct rect *maxH);
 void printMax(struct rect *maxA, struct rect *maxB, struct rect *maxH);
 
 int main(){
     struct rect rectTemp, rectMaxArea={{0,0},{0,0},0,0,0}, rectMaxBase={{0,0},{0,0},0,0,0}, rectMaxHeight={{0,0},{0,0},0,0,0};
-    int matr, matc;
-    int mat[MAX_MAT][MAX_MAT], dim[2];
-    FILE *fp_read;
+    int matr, matc, nr, nc, b, h;
+    int mat[MAX_MAT][MAX_MAT];
 
-    if((fp_read=fopen(filein, "r"))==NULL){
-        printf("Error file opening");
-    }
+    leggiMatrice(mat, MAX_MAT, &nr, &nc);  
 
-    handleFileInput(fp_read, mat, dim);
-    fclose(fp_read);  
+    for(matr=0 ;matr<nr; matr++){
+        for(matc=0 ;matc<nc; matc++){
+            if(riconosciRegione(mat , nr, nc, matr, matc, &b, &h)){
+                rectTemp.start[0]=matr;
+                rectTemp.start[1]=matc;
+                rectTemp.base=b;
+                rectTemp.height=h;
+                rectTemp.area=b*h;
 
-    for(matr=0 ;matr<dim[0]; matr++){
-        for(matc=0 ;matc<dim[1]; matc++){
-            if(mat[matr][matc] == 1 && ( matr==0 || mat[matr-1][matc] == 0 ) && (matc==0 || mat[matr][matc-1] == 0)){
-                rectTemp = calculateNewRect(mat, dim, matr, matc);
                 compareMax(&rectTemp,  &rectMaxArea, &rectMaxBase, &rectMaxHeight);
             }
         }
     }
-    
     printMax(&rectMaxArea, &rectMaxBase, &rectMaxHeight);
 }
 
-void handleFileInput(FILE *fp, int mat[MAX_MAT][MAX_MAT], int dim[2]){
-    int i, j;
+void leggiMatrice(int M[MAX_MAT][MAX_MAT], int maxr , int *nr, int *nc){
+    int i, j, r, c;
+    FILE *fp;
 
-    fscanf(fp, "%d%d ", &dim[0], &dim[1]);
-    for(i=0 ; i<dim[0] ; i++){
-        for(j=0 ;j<dim[1]; j++){
-            fscanf(fp, "%d", &mat[i][j]);
+    if((fp=fopen(filein, "r"))==NULL){
+        printf("Error file opening");
+    }
+
+    fscanf(fp, "%d%d ", &r, &c);
+    for(i=0 ; i<r ; i++){
+        for(j=0 ;j<c; j++){
+            fscanf(fp, "%d", &M[i][j]);
         }
     }
+
+    *nr=r;      *nc=c;
+
+    fclose(fp);
 }
 
-struct rect calculateNewRect(int mat[MAX_MAT][MAX_MAT], int dim[2], int startr, int startc){
+int riconosciRegione(int M[MAX_MAT][MAX_MAT] , int  nr, int nc, int startr, int startc, int *b, int *h){
     int r, c;
-    struct rect rectTemp;
     
-    for(r=startr ;r<dim[0] && mat[r+1][startc]==1; r++);
-    for(c=startc ;c<dim[1] && mat[startr][c+1]==1; c++);
+    if(M[startr][startc] == 1 && (startr==0 || M[startr-1][startc] == 0) && (startc==0 || M[startr][startc-1] == 0)){
+        for(r=startr ;r<nr && M[r+1][startc]==1; r++);
+        for(c=startc ;c<nc && M[startr][c+1]==1; c++);
 
-    rectTemp.start[0] = startr;
-    rectTemp.start[1] = startc;
-    rectTemp.end[0] = r;
-    rectTemp.end[1] = c;
+        *b= c - startc + 1;
+        *h = r - startr + 1;
 
-    rectTemp.base = rectTemp.end[1] - rectTemp.start[1] + 1;
-    rectTemp.height = rectTemp.end[0] - rectTemp.start[0] + 1;
-    rectTemp.area = rectTemp.height * rectTemp.base;
+        printf("Rectangle found estr. sup. SX=<%d,%d> b=%d, h=%d, Area=%d\n", startr, startc, *b, *h, (*b * *h));
 
-    return rectTemp;
+        return 1;
+    }
+    else
+        return 0;
 }
 
 void compareMax(struct rect *rectTemp, struct rect *maxA, struct rect *maxB, struct rect *maxH){

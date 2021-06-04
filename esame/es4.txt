@@ -1,0 +1,26 @@
+void countAndPrint(char str[], int n){
+    int i,j, ctr;
+
+    for (i=0;str[i+n-1]!='\0';i++){
+        ctr=0;
+        for(j=0;j<n;j++){
+            if(isVocale(str[i+j])){
+                ctr++;
+            }
+        }
+        if(ctr>1){
+            printf("sottostringa : ");
+            for(j=0;j<n;j++){
+                putchar(str[i+j]);
+            }
+            putchar('\n');
+        }
+    }
+}
+
+int isVocale(char a){
+    if(a=='a' || a=='e' || a=='i' || a=='o' || a=='u' || a=='A' || a=='E' || a=='O' || a=='U' || a=='I'){
+        return 1;
+    }
+    return 0;
+}

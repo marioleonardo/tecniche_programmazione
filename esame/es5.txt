@@ -1,0 +1,27 @@
+void prodCartOrd(int *v1, int d1, int *v2, int d2){ 
+    int i,j,temp,min1,min2, first,min,m,n, sum;
+
+    min1=0;     min2=0;     first=1;    finito=0;
+    for(i=0;i<d1;i++){
+        for(j=0;j<d2;j++){
+            finito=0;
+            for(m=0;m<d1 && !finito;m++){
+                for(n=0;n<d2 && !finito;n++){
+                    sum=v1[m]+v1[n];
+                    min=v1[min1]+v2[min2];
+                    if(sum<min && first){
+                        min1=m;     min2=n;
+                    }
+                    if((!first && sum>min)||(!first && sum==min && ((m*d1+n)>(min1*d1+min2)))){
+                        printf("(%d,%d) ", v1[m], v2[n]);
+                        finito=1;
+                    }
+                }
+            }
+            if(!finito){
+                printf("(%d,%d) ", v1[min1], v2[min2]);
+            }
+            first=0;
+        }
+    }
+}

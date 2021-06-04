@@ -1,0 +1,30 @@
+int charErase (char str[], int pos[]){
+    int diff, i, j, temp ,posI;
+
+
+    for(i=0;pos[i]!=-1;i++){
+        for(j=0;pos[j+i]!=-1;j++){
+            if(pos[j+1]<pos[j]){
+                temp=pos[j];
+                pos[j]=pos[j+1];
+                pos[j+1]=temp
+            }
+        }
+    }
+
+    
+
+    i=0;    diff=0;     posI=0;
+    while(str[i+posI]!='\0' ){
+        
+        if(pos[posI]==i+posI && pos[posI]!=-1){
+            posI++;
+        }
+        str[i]=str[i+posI];
+        i++;
+    }
+    
+    str[i]=str[i+posI];
+
+    return posI;
+}
