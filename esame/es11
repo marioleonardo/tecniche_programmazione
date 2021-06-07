@@ -1,0 +1,27 @@
+int areaTot(FILE *fp){
+    int r,c,area,x0,y0,x1,y1, M[101][101];
+    
+    area=0;
+
+    for(r=0;r<101;r++){
+        for(c=0;c<101;c++){
+            M[r][c]=0;
+        }
+    }
+
+    while(fscanf(fp,"%d%d%d%d",&x0,&y0,&x1,&y1)==4){
+        for(r=x0;r<=x1;r++){
+            for(c=y0;c<=y1;c++){
+                M[r][c]=1;
+            }
+        }
+    }
+
+    for(r=0;r<101;r++){
+        for(c=0;c<101;c++){
+            area+=M[r][c];
+        }
+    }
+
+    return area;
+}

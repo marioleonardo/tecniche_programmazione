@@ -1,0 +1,53 @@
+int conta(char *parole[], int nparole, char *cerca){
+    int i,j,ctr;
+    char *parola;
+
+    ctr=0;
+
+    for(i=0;i<nparole;i++){
+        parola=parole[i];
+        if(strstr(parola,cerca)!=NULL){
+            ctr++;
+        }
+    }
+
+    return ctr;
+}
+
+
+int conta(char *parole[], int nparole, char *cerca){
+    int i,j,ctr;
+    char *parola;
+
+    ctr=0;
+
+    for(i=0;i<nparole;i++){
+        parola=parole[i];
+        if(cercastr(parola,cerca)==1){
+            ctr++;
+        }
+    }
+
+    return ctr;
+}
+
+int cercastr(char *str1, char *str2){
+    int i,j,found=0,L;
+
+    L=strlen(str2);
+
+    for(i=0;str1[i+L-1]!='\0;i++){
+        ctr=0;
+        for(j=0;j<L && str1[i+j]==str2[j];j++){
+            ctr++;
+            if(ctr==L){
+                found=1;
+            }
+        }
+    }
+
+    return found;
+}
+
+
+num=conta(argv+1,argc-2,argv[argc-1]);

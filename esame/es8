@@ -1,0 +1,24 @@
+int sommaCornici(int mat[MAXN][MAXN], int N, int vet[]){
+    int i,j,corn,sr,sc,er,ec;
+
+    sr=sc=0;
+    er=ec=N-1    
+    for(corn=0;corn<N/2; corn++){
+        vet[corn]=0;
+        for(j=sr;j<=er;j++){
+            vet[corn]+=mat[j][sc];
+            vet[corn]+=mat[j][ec];
+        }
+
+        for(j=sc+1;j<ec;j++){
+            vet[corn]+=mat[sr][j];
+            vet[corn]+=mat[er][j];
+        }
+
+        sr++;   sc++;   er--;   ec--;
+    }
+    vet[++corn]=mat[N/2][N/2];
+
+
+    return (N/2+1);
+}

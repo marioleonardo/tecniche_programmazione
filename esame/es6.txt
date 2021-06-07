@@ -1,0 +1,30 @@
+int count(char A[][MAXM], int n, int m, char str[]){
+    int i, j, k, ctr;
+    
+
+    for (i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            k=0;
+            while(A[i][j+k]==str[k] && str[k]!='\0'){
+                k++;
+                if(str[k]=='\0'){
+                    ctr++;
+                }
+            }
+        }
+    }
+
+    for (i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            k=0;
+            while(A[j+k][i]==str[k] && str[k]!='\0'){
+                k++;
+                if(str[k]=='\0'){
+                    ctr++;
+                }
+            }
+        }
+    }
+
+    return ctr;
+}

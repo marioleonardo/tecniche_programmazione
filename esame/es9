@@ -1,0 +1,16 @@
+void displayRanking(int C[MAXN][MAXM], int n, int m){
+    int i,j,k,ctr,vet[MAXN], max;
+
+    for(i=0;i<n;i++){
+        vet[i]=0;
+    }
+
+    printf("Le squadre capoliste nelle %d giornate sono state: ", m);
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            vet[j]+=C[j][m];
+            max= vet[j]>vet[max]? j:max; 
+        }
+        printf("%d ", max);
+    }
+}
