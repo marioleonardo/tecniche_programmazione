@@ -10,6 +10,10 @@
         "string_view": "c",
         "ranges": "c",
         "cstdio": "c",
-        "*.def": "c"
+        "*.def": "c",
+        "synt.h": "c",
+        "string.h": "c",
+        "ctype.h": "c",
+        "stdio.h": "c"
     }
 }

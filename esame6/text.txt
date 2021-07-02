@@ -1,0 +1,9 @@
+#include <ctype.h>
+
+int main(){
+    char word[20];
+    FILE *fpr;
+
+    fpr=fopen("text.txt", "r")
+
+}

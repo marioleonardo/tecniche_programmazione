@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+void autoFormat(FILE *fpr, FILE *fpw){ int i,j,len,inW,level;
+    char c, cout, word[20], spacer[20], sentenceIn[201], sentenceOut[201];
+  while(fgets(sentenceIn, 200 ,fpr)!=NULL){
+	sentenceOut[0]='\0';
+ inW=0;
+    level=0;
+   for(i=0;sentenceIn[i]!='\n';i++){
+            c=sentenceIn[i];
+	  
+            if(inW>0 && isalpha(c)){
+                word[inW]=c;
+                word[inW+1]='\0';
+                inW++;
+            }
+
+            if(inW>0 && !(isalnum(c) || c=='_' || isdigit(c))){
+                inW=0;
+      word[0]='\0';
+                len=strlen(sentenceOut);
+          sentenceOut[len]=' ';
+                sentenceOut[len+1]='\0';
+           }
+            
+            if(inW==0 && isalpha(c)){
+        inW=1;          
+                word[0]=c;	word[1]='\0';
+                inW++;
+            }
+            
+            
+            if(!isspace(c) && c!='}') {
+                len=strlen(sentenceOut);
+          sentenceOut[len]=c;
+                sentenceOut[len+1]='\0';
+       }
+
+            if(c==';'){
+                strcat(sentenceOut, "\n");
+             strcat(sentenceOut, spacer);        }   else if(c=='{'){
+                level++;
+                for(j=0;j<level;j++){
+                    spacer[j]='\t';
+          }
+                spacer[j]='\0';
+                strcat(sentenceOut, "\n");
+           }   else if(c=='}'){
+          level--;
+                for(j=0;j<level;j++){
+                    spacer[j]='\t';
+                }
+               spacer[j]='\0';
+       strcat(sentenceOut, "\n");
+                strcat(sentenceOut, spacer);           strcat(sentenceOut, "}\n");
+     }
+        }
+
+	//fine while
+   fprintf( fpw, "%s",sentenceOut);
+ sentenceOut[0]='\0';
+    }
+
+}
